@@ -109,25 +109,25 @@
       <soap:address location="http://localhost:8080/EvaluacionWSJaraRicardo/SrvSoap"/>
     </wsdl:port>
   </wsdl:service>
-</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/EvaluacionWSJaraRicardo/SrvSoap</con:endpoint></con:endpoints><con:operation id="ce16b6eb-532a-42f7-813a-5297a0aeb4e7" isOneWay="false" action="" name="listaAmotizacion" bindingOperationName="listaAmotizacion" type="Request-Response" outputName="listaAmotizacionResponse" inputName="listaAmotizacion" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2c71fb90-ead6-42f1-8ce6-9a7f7ea43e36" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/EvaluacionWSJaraRicardo/SrvSoap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.business.ws.ups.edu.ec/">\r
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/EvaluacionWSJaraRicardo/SrvSoap</con:endpoint></con:endpoints><con:operation id="ce16b6eb-532a-42f7-813a-5297a0aeb4e7" isOneWay="false" action="" name="listaAmotizacion" bindingOperationName="listaAmotizacion" type="Request-Response" outputName="listaAmotizacionResponse" inputName="listaAmotizacion" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2c71fb90-ead6-42f1-8ce6-9a7f7ea43e36" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/EvaluacionWSJaraRicardo/SrvSoap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.business.ws.ups.edu.ec/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <ser:listaAmotizacion>\r
          <!--Optional:-->\r
-         <arg0>?</arg0>\r
+         <arg0>8SRV12345</arg0>\r
       </ser:listaAmotizacion>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://services.business.ws.ups.edu.ec/SrvSoap/listaAmotizacion"/></con:call></con:operation><con:operation id="9505d9c2-2be0-4f99-a2ae-5c49d1f0f4a5" isOneWay="false" action="" name="solicitudCredito" bindingOperationName="solicitudCredito" type="Request-Response" outputName="solicitudCreditoResponse" inputName="solicitudCredito" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7751a133-4958-4308-93b9-722ad497ff75" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/EvaluacionWSJaraRicardo/SrvSoap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.business.ws.ups.edu.ec/">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://services.business.ws.ups.edu.ec/SrvSoap/listaAmotizacion"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="9505d9c2-2be0-4f99-a2ae-5c49d1f0f4a5" isOneWay="false" action="" name="solicitudCredito" bindingOperationName="solicitudCredito" type="Request-Response" outputName="solicitudCreditoResponse" inputName="solicitudCredito" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7751a133-4958-4308-93b9-722ad497ff75" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/EvaluacionWSJaraRicardo/SrvSoap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.business.ws.ups.edu.ec/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <ser:solicitudCredito>\r
          <!--Optional:-->\r
          <arg0>\r
-            <cantidad>?</cantidad>\r
+            <cantidad>1000</cantidad>\r
             <!--Optional:-->\r
-            <nuemroCuenta>?</nuemroCuenta>\r
-            <numeromeses>?</numeromeses>\r
+            <nuemroCuenta>2222</nuemroCuenta>\r
+            <numeromeses>12</numeromeses>\r
          </arg0>\r
       </ser:solicitudCredito>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://services.business.ws.ups.edu.ec/SrvSoap/solicitudCredito"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://services.business.ws.ups.edu.ec/SrvSoap/solicitudCredito"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

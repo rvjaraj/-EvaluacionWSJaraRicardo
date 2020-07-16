@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.ups.ws.business.services;
+package ec.edu.ups.ws.services;
 
 import ec.edu.ups.ws.business.ServicesON;
 import ec.edu.ups.ws.emtitis.Amortizacion;

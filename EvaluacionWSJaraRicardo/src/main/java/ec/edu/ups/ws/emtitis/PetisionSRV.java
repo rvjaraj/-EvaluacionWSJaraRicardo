@@ -19,8 +19,9 @@ public class PetisionSRV {
 
     public PetisionSRV(String nuemroCuenta, double cantidad, int numeromeses) {
         this.nuemroCuenta = nuemroCuenta;
-        this.cantidad = cantidad;
         this.numeromeses = numeromeses;
+        this.cantidad = cantidad;
+        
     }
 
     public String getNuemroCuenta() {

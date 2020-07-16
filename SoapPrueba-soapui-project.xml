@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="c08b9506-f093-49a3-a10f-50fa3e3223a5" activeEnvironment="Default" name="SoapPrueba" resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="f4df9619-6f3e-4588-a3a4-6025f57e074e" wsaVersion="NONE" name="SrvSoapSoapBinding" type="wsdl" bindingName="{http://services.business.ws.ups.edu.ec/}SrvSoapSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/EvaluacionWSJaraRicardo/SrvSoap?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/EvaluacionWSJaraRicardo/SrvSoap?wsdl"><con:part><con:url>http://localhost:8080/EvaluacionWSJaraRicardo/SrvSoap?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SrvSoap" targetNamespace="http://services.business.ws.ups.edu.ec/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://services.business.ws.ups.edu.ec/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://services.business.ws.ups.edu.ec/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="amortizacion" type="tns:amortizacion"/>
+      <xs:element name="cuenta" type="tns:cuenta"/>
+      <xs:element name="listaAmotizacion" type="tns:listaAmotizacion"/>
+      <xs:element name="listaAmotizacionResponse" type="tns:listaAmotizacionResponse"/>
+      <xs:element name="solicitudCredito" type="tns:solicitudCredito"/>
+      <xs:element name="solicitudCreditoResponse" type="tns:solicitudCreditoResponse"/>
+      <xs:complexType name="listaAmotizacion">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="listaAmotizacionResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:amortizacion"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="amortizacion">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigo" type="xs:string"/>
+          <xs:element minOccurs="0" name="cuenta" type="tns:cuenta"/>
+          <xs:element minOccurs="0" name="fecha" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="numero" type="xs:string"/>
+          <xs:element minOccurs="0" name="valor" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cuenta">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="numero" type="xs:string"/>
+          <xs:element minOccurs="0" name="saldo" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="solicitudCredito">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:petisionSRV"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="petisionSRV">
+        <xs:sequence>
+          <xs:element name="cantidad" type="xs:double"/>
+          <xs:element minOccurs="0" name="nuemroCuenta" type="xs:string"/>
+          <xs:element name="numeromeses" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="solicitudCreditoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:mensajes"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="mensajes">
+        <xs:sequence>
+          <xs:element name="codigo" type="xs:int"/>
+          <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+          <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="listaAmotizacion">
+    <wsdl:part element="tns:listaAmotizacion" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="solicitudCreditoResponse">
+    <wsdl:part element="tns:solicitudCreditoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="solicitudCredito">
+    <wsdl:part element="tns:solicitudCredito" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listaAmotizacionResponse">
+    <wsdl:part element="tns:listaAmotizacionResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SrvSoap">
+    <wsdl:operation name="listaAmotizacion">
+      <wsdl:input message="tns:listaAmotizacion" name="listaAmotizacion"></wsdl:input>
+      <wsdl:output message="tns:listaAmotizacionResponse" name="listaAmotizacionResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="solicitudCredito">
+      <wsdl:input message="tns:solicitudCredito" name="solicitudCredito"></wsdl:input>
+      <wsdl:output message="tns:solicitudCreditoResponse" name="solicitudCreditoResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SrvSoapSoapBinding" type="tns:SrvSoap">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="listaAmotizacion">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="listaAmotizacion">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listaAmotizacionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="solicitudCredito">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="solicitudCredito">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="solicitudCreditoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SrvSoap">
+    <wsdl:port binding="tns:SrvSoapSoapBinding" name="SrvSoapPort">
+      <soap:address location="http://localhost:8080/EvaluacionWSJaraRicardo/SrvSoap"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/EvaluacionWSJaraRicardo/SrvSoap</con:endpoint></con:endpoints><con:operation id="ce16b6eb-532a-42f7-813a-5297a0aeb4e7" isOneWay="false" action="" name="listaAmotizacion" bindingOperationName="listaAmotizacion" type="Request-Response" outputName="listaAmotizacionResponse" inputName="listaAmotizacion" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2c71fb90-ead6-42f1-8ce6-9a7f7ea43e36" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/EvaluacionWSJaraRicardo/SrvSoap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.business.ws.ups.edu.ec/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:listaAmotizacion>\r
+         <!--Optional:-->\r
+         <arg0>?</arg0>\r
+      </ser:listaAmotizacion>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://services.business.ws.ups.edu.ec/SrvSoap/listaAmotizacion"/></con:call></con:operation><con:operation id="9505d9c2-2be0-4f99-a2ae-5c49d1f0f4a5" isOneWay="false" action="" name="solicitudCredito" bindingOperationName="solicitudCredito" type="Request-Response" outputName="solicitudCreditoResponse" inputName="solicitudCredito" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7751a133-4958-4308-93b9-722ad497ff75" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/EvaluacionWSJaraRicardo/SrvSoap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.business.ws.ups.edu.ec/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:solicitudCredito>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <cantidad>?</cantidad>\r
+            <!--Optional:-->\r
+            <nuemroCuenta>?</nuemroCuenta>\r
+            <numeromeses>?</numeromeses>\r
+         </arg0>\r
+      </ser:solicitudCredito>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://services.business.ws.ups.edu.ec/SrvSoap/solicitudCredito"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

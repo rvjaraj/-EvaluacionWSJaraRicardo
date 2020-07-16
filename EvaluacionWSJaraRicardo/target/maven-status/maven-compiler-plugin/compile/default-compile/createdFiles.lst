@@ -1,3 +1,9 @@
+ec\edu\ups\ws\business\services\SrvSoap.class
+ec\edu\ups\ws\emtitis\PetisionSRV.class
 ec\edu\ups\ws\vista\Vista.class
+ec\edu\ups\ws\emtitis\Amortizacion.class
 ec\edu\ups\ws\business\ServicesON.class
+ec\edu\ups\ws\dao\AmotizacionDAO.class
 ec\edu\ups\ws\emtitis\Mensajes.class
+ec\edu\ups\ws\dao\CuentaDAO.class
+ec\edu\ups\ws\emtitis\Cuenta.class
